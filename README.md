@@ -55,7 +55,7 @@ Araç; primer renal kitle veya metastatik odakta, tru-cut/küçük biyopsi ve re
 3. Hou J, et al. **ELOC-mutated Renal Cell Carcinoma: Clinicopathologic, Immunohistochemical, and Molecular Genetic Analysis of 35 Cases.** Modern Pathology. 2026;39(4):100977. PMID: 41690476.
 4. Wang JJ, et al. **ELOC-Mutated Renal Cell Carcinoma is a Rare Indolent Tumor With Distinctive Genomic Characteristics.** Modern Pathology. 2025;38:100777. PMID: 40246078.
 5. Li H, et al. **Positive GPNMB Immunostaining Differentiates Renal Cell Carcinoma With Fibromyomatous Stroma Associated With TSC1/2/MTOR Alterations From Others.** Am J Surg Pathol. 2023. PMID: 37661807.
-6. Skopal J, et al. **GPNMB expression in clear cell papillary renal cell tumour: Limited specificity and a potential diagnostic pitfall in clear cell renal neoplasms.** Ann Diagn Pathol. 2026;85:152707. PMID: 42641476.
+6. Skopal J, et al. **GPNMB expression in clear cell papillary renal cell tumour: Limited specificity and a potential diagnostic pitfall in clear cell renal neoplasms.** Ann Diagn Pathol. 2026. Epub 21 Aug 2026;85:152707. doi:10.1016/j.anndiagpath.2026.152707. PMID: 42641476.
 
 ## Sınırlılıklar
 
