@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Şeffaf Hücre İçeren Renal Tümör –  Algoritmik Bir Yaklaşım</title>
+<title>Şeffaf Hücre İçeren Renal Tümör – Patolog İçin Algoritmik Yaklaşım</title>
 <style>
   :root{
     --bg:#f5f7fb; --card:#ffffff; --ink:#172033; --muted:#5b667a; --line:#dbe2ee;
@@ -13,15 +13,15 @@
   }
   *{box-sizing:border-box}
   body{margin:0;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.48}
-  header{background:linear-gradient(135deg,#102f61,#2456a6 58%,#0f766e);color:#fff;padding:30px 22px 26px}
+  header{background:linear-gradient(135deg,#0c274d,#2456a6 54%,#0f766e);color:#fff;padding:34px 22px 28px;border-bottom:1px solid rgba(255,255,255,.12)}
   .wrap{max-width:1220px;margin:0 auto}
   h1{font-size:clamp(26px,3.5vw,42px);line-height:1.12;margin:0 0 10px;font-weight:800;letter-spacing:-.03em}
   .lead{max-width:900px;color:#eaf1ff;font-size:16px;margin:0}
-  .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.badge{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);font-size:12px;font-weight:700}
+  .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.badge{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);font-size:12px;font-weight:700}.evidence-note{margin-top:14px;max-width:980px;font-size:12px;line-height:1.45;color:#dce9ff;background:rgba(6,20,41,.22);border:1px solid rgba(255,255,255,.16);padding:10px 12px;border-radius:10px}
   nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   nav .wrap{display:flex;gap:14px;overflow:auto;padding:10px 20px}nav a{white-space:nowrap;text-decoration:none;color:#31425f;font-size:13px;font-weight:700;padding:7px 9px;border-radius:8px}nav a:hover{background:var(--soft);color:var(--accent)}
   main{padding:22px 18px 50px}.grid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}@media(max-width:980px){.grid{grid-template-columns:1fr}}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin-bottom:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 10px 30px rgba(20,34,60,.07);padding:18px;margin-bottom:18px}
   .card h2{margin:0 0 12px;font-size:21px}.card h3{margin:16px 0 8px;font-size:16px}.sub{color:var(--muted);font-size:13px;margin-top:-5px;margin-bottom:12px}
   .seg{display:flex;flex-wrap:wrap;gap:7px}.seg button,.quick button{border:1px solid var(--line);background:#fff;color:#334155;padding:9px 12px;border-radius:10px;font-weight:700;cursor:pointer}.seg button.active,.quick button:hover{border-color:var(--accent);background:var(--soft);color:var(--accent)}
   .quick{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.quick button{font-size:12px}
@@ -50,7 +50,8 @@
   <div class="wrap">
     <h1>Şeffaf hücre içeren renal tümör<br>patolog için algoritmik yaklaşım</h1>
     <p class="lead">Primer renal kitle veya metastatik odakta, tru-cut ve rezeksiyon materyallerinde morfoloji → çekirdek IHK → hedeflenmiş genişletme → gerektiğinde moleküler doğrulama. Amaç, klasik ccRCC'yi güvenle tanımak ve CK7/CAIX/PAX8 gibi belirteçlerin anormal paternlerinde yanlış dışlamayı önlemektir.</p>
-    <div class="badges"><span class="badge">WHO 2022 çerçevesi</span><span class="badge">Histopathology 2026 moleküler doğrulanmış ccRCC serisi</span><span class="badge">ELOC / TSC–mTOR ayrımı</span><span class="badge">Tru-cut doku koruma yaklaşımı</span></div>
+    <div class="badges"><span class="badge">WHO 2022 çerçevesi</span><span class="badge">Histopathology 2026 moleküler doğrulanmış ccRCC serisi</span><span class="badge">ELOC / TSC–mTOR ayrımı</span><span class="badge">Tru-cut doku koruma yaklaşımı</span><span class="badge">Kural tabanlı • olasılık skoru değil</span></div>
+    <div class="evidence-note"><b>Kanıt güncellemesi: 3 Ekim 2026.</b> Bu araç morfoloji ve immünfenotip uyumunu kural tabanlı olarak gösterir; valide edilmiş bir olasılık modeli değildir. Tanaka ve ark. çalışması algoritmanın tamamını değil, moleküler doğrulanmış ccRCC'de aberrant IHK paternlerini destekler.</div>
   </div>
 </header>
 <nav><div class="wrap"><a href="#interactive">İnteraktif algoritma</a><a href="#core">Çekirdek algoritma</a><a href="#traps">Anormal boyanma tuzakları</a><a href="#differential">Ayırıcı tanı tablosu</a><a href="#molecular">Moleküler karşılıklar</a><a href="#references">Kaynaklar</a></div></nav>
@@ -83,7 +84,7 @@
 
     <div class="card">
       <h2>2) Çekirdek IHK</h2>
-      <div class="sub">İlk basamakta çoğu olguda CAIX + CK7 + PAX8 + CD10 yeterli yön verir. Tru-cut'ta doku korumak için kademeli genişletin.</div>
+      <div class="sub">CAIX + CK7 ana yönlendirici eksendir. PAX8 ve CD10'u klinik bağlam ve discordansa göre ekleyin; metastatik odakta renal köken için PAX8 daha erken değerlidir. Tru-cut'ta doku korumak için kademeli genişletin.</div>
       <div class="formgrid">
         <div class="field"><label>CAIX</label><select id="caix"><option value="nd">Yapılmadı</option><option value="box">Diffüz komplet membranöz (box-like)</option><option value="cup">Cup-shaped / lüminal yüz korunmuş</option><option value="het">Fokal / heterojen / zayıf</option><option value="neg">Negatif</option></select></div>
         <div class="field"><label>CK7 / KER7</label><select id="ck7"><option value="nd">Yapılmadı</option><option value="neg">Negatif</option><option value="focal">Fokal / sınırlı</option><option value="diff">Diffüz</option></select></div>
@@ -99,7 +100,7 @@
         <div class="field"><label>AMACR</label><select id="amacr"><option value="nd">Yapılmadı</option><option value="pos">Pozitif</option><option value="neg">Negatif</option></select></div>
         <div class="field"><label>GATA3</label><select id="gata3"><option value="nd">Yapılmadı</option><option value="pos">Pozitif</option><option value="neg">Negatif</option></select></div>
         <div class="field"><label>HMWCK (34βE12 / CK5/6)</label><select id="hmw"><option value="nd">Yapılmadı</option><option value="pos">Pozitif</option><option value="neg">Negatif</option></select></div>
-        <div class="field"><label>GPNMB</label><select id="gpnmb"><option value="nd">Yapılmadı</option><option value="pos">Diffüz/kuvvetli pozitif</option><option value="neg">Negatif / yalnız zayıf-fokal</option></select></div>
+        <div class="field"><label>GPNMB</label><select id="gpnmb"><option value="nd">Yapılmadı</option><option value="strong">Diffüz/kuvvetli pozitif</option><option value="weak">Fokal veya zayıf-orta pozitif</option><option value="neg">Negatif</option></select></div>
         <div class="field"><label>FH</label><select id="fhihc"><option value="nd">Yapılmadı</option><option value="ret">Retained</option><option value="loss">Kayıp</option></select></div>
         <div class="field"><label>2SC</label><select id="sc2"><option value="nd">Yapılmadı</option><option value="pos">Pozitif</option><option value="neg">Negatif</option></select></div>
         <div class="field"><label>SDHB</label><select id="sdhb"><option value="nd">Yapılmadı</option><option value="ret">Retained</option><option value="loss">Kayıp</option></select></div>
@@ -128,7 +129,7 @@
 <div class="card tree">
   <div class="node"><strong>A. Morfoloji klasik ccRCC mi?</strong><br><span class="mini">Nested/alveoler-asiner, clear hücreler, belirgin ince arborizan kapiller ağ.</span></div>
   <div class="arrow">↓</div>
-  <div class="node"><strong>CAIX + CK7 + PAX8 + CD10</strong><br>
+  <div class="node"><strong>CAIX + CK7 → bağlama göre PAX8 + CD10</strong><br>
     <span class="tag tgreen">CAIX diffüz box-like</span><span class="tag tblue">PAX8+</span><span class="tag tblue">CD10+</span><span class="tag tgray">CK7 − / fokal</span><br>
     <b>→ Morfoloji uyumluysa ccRCC kuvvetle desteklenir.</b> Rezeksiyonda ek IHK çoğu zaman gerekmez. Tru-cut'ta radyoloji ve morfoloji uyumluysa gereksiz panelden kaçının.
   </div>
@@ -147,10 +148,10 @@
 <div class="card">
   <div class="kpi"><div><b>%30</b><span>Moleküler doğrulanmış ccRCC'de herhangi bir CK7 pozitifliği</span></div><div><b>%16</b><span>Diffüz CK7 pozitifliği</span></div><div><b>%15</b><span>Metastatik ccRCC'de CAIX negatifliği</span></div><div><b>≈%9</b><span>Metastatik ccRCC'de PAX8 negatifliği</span></div></div>
   <div class="alert warn"><b>CK7 diffüz pozitif = ccRCC değil</b> şeklinde yorumlamayın. 2026 moleküler doğrulanmış seride diffüz KER7 ekspresyonu %16 idi ve özellikle primer, düşük/intermediate mimarili, PBRM1-wild type tümörlerde görüldü.</div>
-  <div class="alert danger"><b>CAIX negatifliği özellikle metastazda yanıltıcıdır.</b> Aynı seride CAIX-negatif tümörlerin tamamı metastatikti (yaklaşık %15 metastatik olgu). Klasik morfoloji varsa ccRCC'yi tek başına dışlamaz.</div>
-  <div class="alert warn"><b>PAX8 negatifliği renal kökeni otomatik dışlamaz.</b> Moleküler doğrulanmış seride primerlerin yaklaşık %4'ü ve metastazların yaklaşık %9'u PAX8-negatifti. İç kontrol/teknik kalite ve morfoloji kritik.</div>
+  <div class="alert danger"><b>CAIX negatifliği bağlama göre farklı ağırlıktadır.</b> Moleküler doğrulanmış seride primer ccRCC'lerin 0/54'ü, metastatik ccRCC'lerin 8/54'ü (%14,8) CA9-negatifti. Bu nedenle primer renal kitlede CAIX kaybı belirgin discordans kabul edilmeli; metastatik odakta ise ccRCC'yi tek başına dışlamamalıdır.</div>
+  <div class="alert warn"><b>PAX8 negatifliği renal kökeni otomatik dışlamaz.</b> Seride primerlerde %3,8, metastazlarda %9,4 PAX8-negatiflik vardı; bu fark istatistiksel olarak anlamlı değildi (P=0,437). İç kontrol, teknik kalite ve morfoloji kritik.</div>
   <div class="alert info"><b>CD10 kaybı:</b> ccRCC'de görülebilir; 2026 serisinde BAP1-altere tümörler CD10 negatifliğine daha yatkındı ve BAP1 alterasyonu yüksek dereceli mimari ile ilişkiliydi.</div>
-  <p class="mini">Not: Bu yüzdeler rutin tüm ccRCC popülasyonunu temsil eden prevalanslar değil; NGS için seçilmiş, morfolojik/immünfenotipik olarak daha problemli olguları içeren bir kohorttan gelmektedir.</p>
+  <p class="mini">Not: Bu yüzdeler rutin tüm ccRCC popülasyonunu temsil eden prevalanslar değildir; NGS için seçilmiş, non-kanonik morfoloji/IHK içerebilen bir kohorttan gelmektedir. Tanaka ve ark. çalışması bütün ayırıcı tanı algoritmasını valide etmez.</p>
 </div>
 
 <h2 id="differential" class="section-title">Şeffaf hücreli renal tümör – pratik ayırıcı tanı matriksi</h2>
@@ -160,8 +161,8 @@
 <tbody>
 <tr><td><b>Clear cell RCC</b></td><td>Nested/alveoler-asiner, arborizan ince damar ağı, clear→eozinofilik heterojenite</td><td><span class="tag tgreen">Diffüz box-like +</span><br>Yüksek-grade/metastazda azalabilir</td><td>Genelde −/fokal; <b>diffüz olabilir</b></td><td>CD10 sıklıkla +; AMACR değişken</td><td>PAX8+, panCK+</td><td><b>VHL inaktivasyonu / 3p kaybı</b>; PBRM1, BAP1, SETD2 sekonder sürücüler</td></tr>
 <tr><td><b>Clear cell papillary renal cell tumor</b></td><td>Düşük grade, tubüler/papiller, apikal-lüminal nükleer hizalanma, subnükleer vakuol</td><td><span class="tag torange">Cup-shaped +</span></td><td><span class="tag tgreen">Diffüz +</span></td><td>CD10 genelde −; AMACR −</td><td>GATA3+, HMWCK+ sıklıkla</td><td>Tipik olguda VHL/3p paterni yok. IHK ile ccRCC arasında nadir örtüşme mümkündür.</td></tr>
-<tr><td><b>ELOC-mutated RCC</b></td><td>Clear hücre + tubüler/papiller/nested yapı + belirgin fibromyomatöz bantlar</td><td><span class="tag tgreen">Diffüz box-like +</span></td><td>Sıklıkla diffüz +; nadiren negatif olabilir</td><td>CD10 sıklıkla +; AMACR değişken</td><td>PAX8+; GPNMB genelde −</td><td><b>ELOC mutasyonu tanı için esastır</b>; VHL/3p ccRCC paterni yok; sık monosomi 8/8q kaybı</td></tr>
-<tr><td><b>TSC1/TSC2/MTOR-altere RCCFMS</b></td><td>ELOC ile neredeyse ayırt edilemeyen fibromyomatöz stromalı clear hücreli tümör</td><td>Diffüz veya patchy +</td><td>Genellikle diffüz +</td><td>CD10 değişken</td><td><b>GPNMB diffüz/kuvvetli +</b> destekleyici</td><td>TSC1, TSC2 veya MTOR alterasyonu; moleküler doğrulama önerilir</td></tr>
+<tr><td><b>ELOC-mutated RCC</b></td><td>Clear hücre + tubüler/papiller/nested yapı + fibromyomatöz bantlar</td><td><span class="tag tgreen">Diffüz güçlü +</span></td><td>Genellikle +; 2026'daki 35 olguluk seride tümü orta/zayıf +</td><td>CD10 sıklıkla +; AMACR değişken</td><td>PAX8+; <b>GPNMB genelde −</b> (2026: 28/28 −)</td><td><b>ELOC mutasyonu tanı için esastır.</b> 2026 serisinde değerlendirilen 26/26 olguda 8q kaybı, 3p kaybı ise 0/26 idi.</td></tr>
+<tr><td><b>TSC1/TSC2/MTOR-altere RCCFMS</b></td><td>ELOC ile belirgin örtüşen fibromyomatöz stromalı clear hücreli tümör</td><td>Diffüz veya patchy +</td><td>Genellikle +</td><td>CD10 değişken</td><td><b>GPNMB güçlü/diffüz +</b> özellikle TSC1/2 için destekleyici; MTOR ve CCPRCT ile örtüşebilir</td><td>TSC1, TSC2 veya MTOR alterasyonu; GPNMB tek başına ayırıcı değildir, moleküler doğrulama önerilir</td></tr>
 <tr><td><b>TFE3-rearranged / TFEB-altered RCC</b></td><td>Clear/eozinofilik çift ton, papiller yapı, psammoma; çok değişken morfoloji</td><td>Genelde −/fokal</td><td>Genelde −</td><td>AMACR/CD10 değişken</td><td>Cathepsin K değişken; Melan-A/HMB45 özellikle TFEB'de yardımcı</td><td><b>TFE3/TFEB rearrangement/alteration</b>; şüphede FISH veya fusion-capable RNA/NGS ile doğrulama</td></tr>
 <tr><td><b>FH-deficient RCC</b></td><td>Çoklu mimari, papiller/tubulokistik/solid, belirgin makronükleol ± perinükleoler halo; bazen clear alan</td><td>Tipik ccRCC paterni beklenmez</td><td>Değişken</td><td>Değişken</td><td><b>FH kaybı ve/veya 2SC+</b></td><td>Biallelik FH inaktivasyonu; germline değerlendirme gerektirebilir</td></tr>
 <tr><td><b>SDH-deficient RCC</b></td><td>Flokülan sitoplazma, sitoplazmik inklüzyon/vakuoller; clear alan olabilir</td><td>Genelde −</td><td>Genelde −</td><td>Değişken</td><td><b>SDHB kaybı</b></td><td>SDHx inaktivasyonu; germline ilişki açısından önemli</td></tr>
@@ -176,7 +177,7 @@
 <div class="grid">
   <div class="card">
     <h2>Tru-cut</h2>
-    <div class="alert good"><b>Doku koruma önceliği:</b> önce morfoloji + 4'lü çekirdek panel. Geniş “shotgun” IHK yerine paterne göre ikinci tur.</div>
+    <div class="alert good"><b>Doku koruma önceliği:</b> önce morfoloji + CAIX/CK7; PAX8 ve CD10'u klinik bağlama/discordansa göre ekleyin. Geniş “shotgun” IHK yerine paterne göre ikinci tur.</div>
     <ul>
       <li><b>Canonical ccRCC morfolojisi + canonical IHK:</b> çoğu olguda moleküler test gerekmez.</li>
       <li><b>CK7 diffüz + CAIX+</b> veya CCPRCT/ELOC/FMS örtüşmesi: doku uygunsa morfoloji odaklı yardımcı IHK; halen belirsizse moleküler doğrulama eşiği düşürülür.</li>
@@ -210,7 +211,7 @@
 <tr><td>CAIX cup-shaped + / CK7 diffüz</td><td>CCPRCT yönünde</td><td>CD10−/AMACR− ± GATA3/HMWCK+ ile destekle; yüksek grade/nekroz/uyumsuzluk varsa moleküler teyit</td></tr>
 <tr><td><b>CAIX negatif</b> ama klasik ccRCC morfolojisi</td><td>Özellikle metastaz/yüksek-grade ccRCC dışlanmaz</td><td>Kontrol ve farklı blok; PAX8/CD10; morfolojiye göre MiT/FH/SDH/ALK paneli; gerekirse VHL/3p</td></tr>
 <tr><td><b>PAX8 negatif</b></td><td>Renal köken kuşkulu ama ccRCC tamamen dışlanmaz</td><td>Teknik kontrol + panCK/CAIX/CD10; adrenal/PEComa/metastaz taklitçilerini morfolojiye göre ekarte et</td></tr>
-<tr><td>Fibromyomatöz stroma + CAIX+/CK7+</td><td>ELOC vs TSC/mTOR RCCFMS vs ccRCC</td><td>GPNMB triage; <b>moleküler ELOC + TSC1/TSC2/MTOR + VHL/3p</b></td></tr>
+<tr><td>Fibromyomatöz stroma + CAIX+/CK7+</td><td>ELOC vs TSC/mTOR RCCFMS vs ccRCC</td><td>GPNMB boyanma şiddet/paternini triage için kullan; tek başına karar verme. <b>Moleküler ELOC + TSC1/TSC2/MTOR + VHL/3p</b></td></tr>
 <tr><td>CAIX−/CK7− + papiller/clear/eozinofilik + psammoma</td><td>MiT ailesi öncelikli</td><td>Cathepsin K, TFE3/TFEB; FISH/RNA fusion doğrulaması</td></tr>
 <tr><td>Yüksek-grade, çoklu mimari, belirgin nükleol</td><td>FH-deficient RCC mutlaka düşün</td><td>FH + 2SC; uyumluysa moleküler/germline süreç</td></tr>
 </tbody></table>
@@ -225,13 +226,15 @@
   <li><b>Trpkov K, et al.</b> GUPS update on renal neoplasia: existing WHO entities and evolving molecular concepts. <i>Modern Pathology</i>. 2021. <a href="https://www.nature.com/articles/s41379-021-00779-w" target="_blank">Nature / Modern Pathology</a>.</li>
   <li><b>Choy B, et al.</b> Role of renal mass biopsy for diagnosis and management: review of current trends and future directions. <i>Cancer Cytopathology</i>. 2023. <a href="https://acsjournals.onlinelibrary.wiley.com/doi/10.1002/cncy.22697" target="_blank">DOI sayfası</a>.</li>
   <li><b>Wang JJ, et al.</b> ELOC-Mutated Renal Cell Carcinoma is a Rare Indolent Tumor With Distinctive Genomic Characteristics. <i>Modern Pathology</i>. 2025;38:100777. <a href="https://pubmed.ncbi.nlm.nih.gov/40246078/" target="_blank">PMID 40246078</a>.</li>
+  <li><b>Hou J, et al.</b> ELOC-mutated Renal Cell Carcinoma: Clinicopathologic, Immunohistochemical, and Molecular Genetic Analysis of 35 Cases. <i>Modern Pathology</i>. 2026;39(4):100977. <a href="https://pubmed.ncbi.nlm.nih.gov/41690476/" target="_blank">PMID 41690476</a>. — Diffüz güçlü CAIX, GPNMB 28/28 negatif, 8q kaybı 26/26; 3p kaybı saptanmadı.</li>
   <li><b>Li H, et al.</b> Positive GPNMB immunostaining differentiates RCC with fibromyomatous stroma associated with TSC1/2/MTOR alterations from others. <i>Am J Surg Pathol</i>. 2023. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10592185/" target="_blank">PMC10592185</a>.</li>
+  <li><b>Skopal J, et al.</b> GPNMB expression in clear cell papillary renal cell tumour: Limited specificity and a potential diagnostic pitfall in clear cell renal neoplasms. <i>Ann Diagn Pathol</i>. 2026;85:152707. <a href="https://pubmed.ncbi.nlm.nih.gov/42641476/" target="_blank">PMID 42641476</a>. — GPNMB'nin özellikle MTOR-altere RCCFMS ve CCPRCT arasında sınırlı özgüllüğünü vurgular.</li>
   <li><b>Oberc A, et al.</b> Diagnostic accuracy and clinical outcomes of clear cell papillary renal cell tumour at renal mass biopsy. <i>Histopathology</i>. 2025. <a href="https://onlinelibrary.wiley.com/doi/10.1111/his.15436" target="_blank">DOI sayfası</a>.</li>
   <li><b>Liang et al / contemporary MiTF literature.</b> TFE3/TFEB şüpheli RCC'de IHK'nin değişken olması nedeniyle moleküler/FISH doğrulama yaklaşımı. <a href="https://academic.oup.com/ajcp/article/160/6/549/7232443" target="_blank">AJCP 2023 clinical FISH experience</a>.</li>
 </ol>
 <p class="mini">Bu araç tanısal karar desteğidir; tek bir IHK sonucunu “tanı koydurucu” kabul etmez. Nihai yorum morfoloji, klinik-radyolojik bağlam, preanalitik kalite ve gerektiğinde moleküler doğrulama ile bütünleştirilmelidir.</p>
 </div>
-<footer>Hazırlanma: Ekim 2026 • Tanı için kullanılmaz, eğitim amaçlıdır, veri dışarı göndermez.</footer>
+<footer>Kanıt güncellemesi: 3 Ekim 2026 • Patolog odaklı karar desteği • Valide edilmiş olasılık modeli değildir • Nihai tanı morfoloji, klinik-radyoloji, teknik kalite ve gerektiğinde moleküler doğrulama ile konur • Veri dışarı göndermez.</footer>
 </main>
 
 <script>
@@ -242,7 +245,7 @@ document.querySelectorAll('select,input[type=checkbox]').forEach(el=>el.addEvent
 function val(id){return document.getElementById(id).value}
 function morph(v){return [...document.querySelectorAll('#morphChecks input:checked')].some(x=>x.value===v)}
 function add(arr,name,score,reasons,next){arr.push({name,score,reasons,next})}
-function confidence(s){if(s>=7)return ['Yüksek öncelik','high'];if(s>=4)return ['Düşün','mid'];return ['Düşük öncelik','low']}
+function confidence(s){if(s>=7)return ['Güçlü fenotipik uyum','high'];if(s>=4)return ['Kısmi fenotipik uyum','mid'];return ['Zayıf fenotipik uyum','low']}
 function evaluateCase(){
   const caix=val('caix'), ck7=val('ck7'), pax8=val('pax8'), cd10=val('cd10'), amacr=val('amacr'), gata3=val('gata3'), hmw=val('hmw'), gpnmb=val('gpnmb'), fhihc=val('fhihc'), sc2=val('sc2'), sdhb=val('sdhb'), catk=val('catk'), mitihc=val('mitihc'), cd117=val('cd117'), alk=val('alk'), pank=val('pank');
   let ds=[];
@@ -252,7 +255,10 @@ function evaluateCase(){
   if(ck7==='neg'||ck7==='focal'){s+=2;r.push('CK7 negatif/fokal')}
   if(pax8==='pos'){s+=1;r.push('PAX8 pozitif')}
   if(cd10==='pos'){s+=2;r.push('CD10 pozitif')}
-  if(caix==='cup')s-=3;if(morph('ccp'))s-=2;if(fhihc==='loss'||sdhb==='loss')s-=5;
+  if(caix==='cup')s-=3;
+  if(caix==='neg'){s+=(context==='primary'?-5:-1);r.push(context==='primary'?'primer tümörde CAIX negatifliği belirgin discordans':'metastatik odakta CAIX kaybı görülebilir')}
+  if(caix==='het'){s+=(context==='primary'?-2:0);r.push('heterojen/fokal CAIX')}
+  if(morph('ccp'))s-=2;if(fhihc==='loss'||sdhb==='loss')s-=5;
   add(ds,'Clear cell RCC',s,r,'Canonical ise ek alt-tipleme IHK’si çoğu zaman gerekmez. Discordan IHK varsa VHL/3p eksenini ve klonal heterojeniteyi düşün.');
 
   s=0;r=[];
@@ -272,14 +278,16 @@ function evaluateCase(){
   if(ck7==='diff'){s+=2;r.push('diffüz CK7')}
   if(cd10==='pos'){s+=1;r.push('CD10 pozitif')}
   if(gpnmb==='neg'){s+=1;r.push('GPNMB negatif')}
-  add(ds,'ELOC-mutated RCC',s,r,'ELOC mutasyonu tanı için gereklidir. VHL/3p ccRCC ekseni ile ELOC ve TSC1/TSC2/MTOR’u birlikte değerlendirmek en güvenli ayrımdır.');
+  if(gpnmb==='strong')s-=2;
+  add(ds,'ELOC-mutated RCC',s,r,'ELOC mutasyonu tanı için gereklidir. GPNMB negatifliği destekleyebilir ancak tanı molekülerdir; VHL/3p ccRCC ekseni ile ELOC ve TSC1/TSC2/MTOR’u birlikte değerlendirin.');
 
   s=0;r=[];
   if(morph('fms')){s+=4;r.push('fibromyomatöz stroma')}
   if(caix==='box'||caix==='het'){s+=2;r.push('CAIX pozitif/heterojen')}
   if(ck7==='diff'){s+=2;r.push('diffüz CK7')}
-  if(gpnmb==='pos'){s+=4;r.push('GPNMB diffüz/kuvvetli pozitif')}
-  add(ds,'TSC1/TSC2/MTOR-altere RCC with fibromyomatous stroma',s,r,'GPNMB güçlü destekleyici olabilir ancak moleküler doğrulama gerekir. TSC kliniği, multifokalite ve diğer TSC ilişkili renal lezyonları sorgula.');
+  if(gpnmb==='strong'){s+=3;r.push('GPNMB diffüz/kuvvetli pozitif')}
+  if(gpnmb==='weak'){s+=1;r.push('GPNMB fokal/zayıf-orta pozitif')}
+  add(ds,'TSC1/TSC2/MTOR-altere RCC with fibromyomatous stroma',s,r,'Diffüz/kuvvetli GPNMB özellikle TSC1/2-altere RCCFMS için destekleyebilir; ancak MTOR-altere RCCFMS ve CCPRCT ile örtüşme nedeniyle GPNMB tek başına ayırıcı değildir. Moleküler doğrulama gerekir.');
 
   s=0;r=[];
   if(morph('mit')){s+=4;r.push('MiT şüpheli morfoloji')}
@@ -326,23 +334,26 @@ function evaluateCase(){
 
   let ws=[];
   if(ck7==='diff')ws.push('<div class="alert warn"><b>Diffüz CK7 ccRCC’yi dışlamaz.</b> Moleküler doğrulanmış 2026 serisinde diffüz KER7 %16 idi. Morfoloji ve CAIX paterni belirleyicidir.</div>');
-  if(caix==='neg'||caix==='het')ws.push(`<div class="alert danger"><b>CAIX ${caix==='neg'?'negatif':'heterojen'}:</b> özellikle ${context==='met'?'metastatik bağlamda':'yüksek-grade/heterojen tümörde'} ccRCC yine mümkün. Klasik morfoloji varsa otomatik dışlama yapmayın.</div>`);
-  if(pax8==='neg')ws.push('<div class="alert warn"><b>PAX8 negatifliği:</b> ccRCC’de nadiren görülebilir; metastazda daha sık. İç kontrolü doğrula ve renal olmayan taklitçileri morfolojiye göre değerlendir.</div>');
+  if(caix==='neg'&&context==='primary')ws.push('<div class="alert danger"><b>Primer renal kitle + CAIX negatifliği: belirgin discordans.</b> Tanaka 2026 serisinde primer ccRCC 0/54 CA9-negatifti. Teknik kontrol/farklı blok, alternatif RCC alt tipleri ve gerekirse VHL/3p moleküler doğrulaması düşünülmelidir.</div>');
+  if(caix==='neg'&&context==='met')ws.push('<div class="alert warn"><b>Metastatik odakta CAIX negatifliği ccRCC\'yi dışlamaz.</b> Tanaka 2026 serisinde metastatik ccRCC\'lerin 8/54\'ü (%14,8) CA9-negatifti.</div>');
+  if(caix==='het')ws.push('<div class="alert info"><b>Heterojen/fokal CAIX:</b> teknik kalite ve tümör heterojenitesini kontrol edin; morfoloji ve klinik bağlama göre alternatif RCC dallarını değerlendirin.</div>');
+  if(pax8==='neg')ws.push('<div class="alert warn"><b>PAX8 negatifliği:</b> ccRCC’de nadiren görülebilir. Tanaka 2026 serisinde primerlerde %3,8, metastazlarda %9,4 idi; fark istatistiksel olarak anlamlı değildi (P=0,437). İç kontrolü doğrulayın ve renal olmayan taklitçileri morfolojiye göre değerlendirin.</div>');
   if(cd10==='neg')ws.push('<div class="alert info"><b>CD10 negatifliği:</b> ccRCC’yi dışlamaz; BAP1-altere ccRCC’lerde daha sık görülebilir.</div>');
-  if(morph('fms')&&caix==='box'&&ck7==='diff')ws.push('<div class="alert danger"><b>Fibromyomatöz stroma + CAIX+/CK7+:</b> IHK ile ELOC ve TSC/mTOR grubu güvenle ayrılmaz. ELOC tanısı moleküler doğrulama gerektirir.</div>');
+  if(morph('fms')&&caix==='box'&&ck7==='diff')ws.push('<div class="alert danger"><b>Fibromyomatöz stroma + CAIX+/CK7+:</b> IHK ile ELOC ve TSC/mTOR grubu güvenle ayrılmaz. GPNMB triage için yardımcıdır ancak 2026 verileri özgüllüğünün sınırlı olduğunu gösterir; ELOC/TSC1/TSC2/MTOR ayrımı molekülerdir.</div>');
   if(caix==='cup'&&ck7==='diff')ws.push('<div class="alert good"><b>CCPRCT paterni:</b> cup-shaped CAIX + diffüz CK7 güçlü bir ipucu; CD10/AMACR negatifliği ve GATA3/HMWCK destekleyebilir. Ancak nadir ccRCC örtüşmeleri nedeniyle tüm morfolojiyi birlikte yorumlayın.</div>');
   document.getElementById('warnings').innerHTML=ws.join('');
 
   let ns=[];
-  const coreMissing=[caix,ck7,pax8,cd10].filter(x=>x==='nd').length;
-  if(coreMissing)ns.push('Çekirdek panel eksik: CAIX, CK7, PAX8 ve CD10 sonuçlarını tamamlamak algoritmanın seçiciliğini artırır.');
-  if((ck7==='diff'&&caix==='box')||(morph('fms')))ns.push('CK7 diffüz/CAIX+ dalında morfolojiye göre GATA3 + HMWCK + AMACR ve fibromyomatöz stroma varsa GPNMB yararlı olabilir; kesin ELOC/TSC-mTOR ayrımı molekülerdir.');
+  if(caix==='nd'||ck7==='nd')ns.push('CAIX ve CK7 ana yönlendirici eksendir; eksik olanı tamamlamak fenotipik ayrımı belirginleştirir.');
+  if(context==='met'&&pax8==='nd')ns.push('Metastatik odakta renal kökeni desteklemek için PAX8 erken basamakta yararlıdır; negatifliği tek başına renal kökeni dışlamaz.');
+  if(cd10==='nd'&&((ck7==='diff'&&caix==='box')||caix==='neg'||morph('high')))ns.push('Discordan/atipik patern varsa CD10, morfolojiyle birlikte ikinci basamakta yardımcı olabilir.');
+  if((ck7==='diff'&&caix==='box')||(morph('fms')))ns.push('CK7 diffüz/CAIX+ dalında morfolojiye göre GATA3 + HMWCK + AMACR; fibromyomatöz stromada GPNMB boyanma şiddet/paterni triage için yardımcı olabilir. GPNMB tek başına ayırıcı değildir; kesin ELOC/TSC-mTOR ayrımı molekülerdir.');
   if(caix==='neg'||caix==='het'||morph('mit')||morph('high'))ns.push('CAIX negatif/heterojen veya yüksek-grade/atipik tümörde TFE3/TFEB, FH/2SC, SDHB ve gerekirse ALK’yi morfolojiye göre seçin; rastgele tüm paneli aynı anda yapmayın.');
   if(specimen==='core')ns.push('Tru-cut: doku rezervini koruyun. İkinci tur IHK ve NGS/FISH’i ilk paternin açtığı dala göre planlayın.');
   else ns.push('Rezeksiyon: heterojen alanları ayrı örnekleyin; IHK/NGS için morfolojik olarak temsil edici ve tercihen en problemli alanı seçin.');
   document.getElementById('nextSteps').innerHTML='<h3>Pratik sonraki adımlar</h3><ul>'+ns.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
   const topName=(top[0]||ds[0]).name;
-  document.getElementById('summaryBox').innerHTML=`<b>${specimen==='core'?'Tru-cut':'Rezeksiyon'} • ${context==='primary'?'primer renal kitle':'metastatik odak'}</b><br>Mevcut verilere göre en çok öne çıkan yol: <b>${topName}</b>. Bu sıralama olasılık hesabı değildir; seçilen morfoloji/IHK paternlerinin tanısal uyumunu gösteren bir karar desteğidir.`;
+  document.getElementById('summaryBox').innerHTML=`<b>${specimen==='core'?'Tru-cut':'Rezeksiyon'} • ${context==='primary'?'primer renal kitle':'metastatik odak'}</b><br>Mevcut verilere göre en çok öne çıkan fenotipik yol: <b>${topName}</b>. Bu gösterim valide edilmiş bir olasılık hesabı değildir; seçilen morfoloji/IHK paternlerinin kural tabanlı uyumunu gösterir.`;
 }
 function resetAll(){document.querySelectorAll('select').forEach(s=>s.value='nd');document.querySelectorAll('input[type=checkbox]').forEach(c=>c.checked=false);evaluateCase()}
 function setMorph(v){document.querySelectorAll('#morphChecks input').forEach(c=>c.checked=(c.value===v))}
